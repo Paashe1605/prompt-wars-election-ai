@@ -22,9 +22,10 @@ def get_election_info(location: str, language: str) -> str:
         f"Location: {location}\n"
         f"Requested Language: {language}\n\n"
         "Please provide the following information:\n"
-        "1. Upcoming election timelines for this location.\n"
+        "1. Upcoming election timelines for this location. In the timeline section, you MUST categorize the information into Local, State/Provincial, and National levels. You MUST include significant recent past elections and all upcoming elections for this location. Ensure it remains highly structured.\n"
         "2. Step-by-step voting instructions and requirements.\n"
         "3. Relevant non-partisan educational data about the electoral process.\n"
+        "You MUST research the current ruling parties and leaders at the Local, State, and National levels. You MUST also provide key candidates for the upcoming election with unbiased, non-partisan portfolios. If candidates are unannounced, state 'Awaiting official party nomination'. Return accurate hex codes for their party colors.\n"
         "Ensure the entire response is natively translated into the requested language."
     )
     
@@ -36,8 +37,18 @@ def get_election_info(location: str, language: str) -> str:
                 description="A concise, 2-3 sentence overview of the election situation perfect for text-to-speech."
             ),
             "timeline": Schema(
-                type=Type.STRING,
-                description="Markdown formatted election timelines."
+                type=Type.ARRAY,
+                description="Chronological election timelines.",
+                items=Schema(
+                    type=Type.OBJECT,
+                    properties={
+                        "date": Schema(type=Type.STRING),
+                        "level": Schema(type=Type.STRING, description="e.g., 'National', 'State', or 'Local'"),
+                        "title": Schema(type=Type.STRING),
+                        "description": Schema(type=Type.STRING)
+                    },
+                    required=["date", "level", "title", "description"]
+                )
             ),
             "next_election_date": Schema(
                 type=Type.STRING,
@@ -70,9 +81,37 @@ def get_election_info(location: str, language: str) -> str:
                     },
                     required=["title", "url", "type"]
                 )
-            )
+            ),
+            "ruling_parties": Schema(
+                type=Type.ARRAY,
+                items=Schema(
+                    type=Type.OBJECT,
+                    properties={
+                        "level": Schema(type=Type.STRING),
+                        "party_name": Schema(type=Type.STRING),
+                        "leader_name": Schema(type=Type.STRING),
+                        "party_color": Schema(type=Type.STRING, description="Valid hex color code")
+                    },
+                    required=["level", "party_name", "leader_name", "party_color"]
+                )
+            ),
+            "key_candidates": Schema(
+                type=Type.ARRAY,
+                items=Schema(
+                    type=Type.OBJECT,
+                    properties={
+                        "party_name": Schema(type=Type.STRING),
+                        "candidate_name": Schema(type=Type.STRING),
+                        "portfolio": Schema(type=Type.STRING, description="Strictly neutral, 2-sentence background"),
+                        "party_color": Schema(type=Type.STRING)
+                    },
+                    required=["party_name", "candidate_name", "portfolio", "party_color"]
+                )
+            ),
+            "audio_voting_procedures": Schema(type=Type.STRING, description="A 2-sentence audio script summarizing the voting process."),
+            "audio_political_landscape": Schema(type=Type.STRING, description="A 2-sentence audio script summarizing ruling parties and candidates.")
         },
-        required=["audio_summary", "timeline", "next_election_date", "voting_steps", "resources"]
+        required=["audio_summary", "timeline", "next_election_date", "voting_steps", "resources", "ruling_parties", "key_candidates", "audio_voting_procedures", "audio_political_landscape"]
     )
     
     response = client.models.generate_content(

@@ -76,13 +76,15 @@ def election_guide(request: ElectionGuideRequest):
     try:
         grounded_response = get_election_info(location_str, request.language)
         audio_base64 = None
+        audio_base64_voting = None
+        audio_base64_politics = None
         try:
             parsed_response = json.loads(grounded_response)
             
             # Generate TTS audio
             audio_text = parsed_response.get("audio_summary", "")
+            tts_lang = LANG_MAP.get(request.language, "en") # default to English
             if audio_text:
-                tts_lang = LANG_MAP.get(request.language, "en") # default to English
                 tts = gTTS(text=audio_text, lang=tts_lang, slow=False)
                 
                 fp = io.BytesIO()
@@ -90,13 +92,31 @@ def election_guide(request: ElectionGuideRequest):
                 fp.seek(0)
                 audio_base64 = base64.b64encode(fp.read()).decode('utf-8')
                 
+            audio_voting = parsed_response.get("audio_voting_procedures", "")
+            if audio_voting:
+                tts = gTTS(text=audio_voting, lang=tts_lang, slow=False)
+                fp = io.BytesIO()
+                tts.write_to_fp(fp)
+                fp.seek(0)
+                audio_base64_voting = base64.b64encode(fp.read()).decode('utf-8')
+                
+            audio_politics = parsed_response.get("audio_political_landscape", "")
+            if audio_politics:
+                tts = gTTS(text=audio_politics, lang=tts_lang, slow=False)
+                fp = io.BytesIO()
+                tts.write_to_fp(fp)
+                fp.seek(0)
+                audio_base64_politics = base64.b64encode(fp.read()).decode('utf-8')
+                
         except json.JSONDecodeError:
             parsed_response = {"error": "Failed to parse AI response as JSON", "raw_output": grounded_response}
             
         response_payload = {
             "response": parsed_response,
             "location_identified": location_str,
-            "audio_base64": f"data:audio/mp3;base64,{audio_base64}" if audio_base64 else None
+            "audio_base64": f"data:audio/mp3;base64,{audio_base64}" if audio_base64 else None,
+            "audio_base64_voting": f"data:audio/mp3;base64,{audio_base64_voting}" if audio_base64_voting else None,
+            "audio_base64_politics": f"data:audio/mp3;base64,{audio_base64_politics}" if audio_base64_politics else None
         }
         return response_payload
     except Exception as e:
