@@ -3,7 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut, GeocoderServiceError
-
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+import os
 from election_agent import get_election_info
 
 app = FastAPI(title="Election Guide API")
@@ -126,3 +128,10 @@ def election_guide(request: ElectionGuideRequest):
 def get_location(lat: float, lon: float):
     location_str = reverse_geocode(lat, lon)
     return {"location": location_str}
+
+# Serve React Frontend
+if os.path.isdir("static"):
+    app.mount("/assets", StaticFiles(directory="static/assets"), name="assets")
+    @app.get("/{full_path:path}")
+    async def serve_frontend(full_path: str):
+        return FileResponse("static/index.html")
