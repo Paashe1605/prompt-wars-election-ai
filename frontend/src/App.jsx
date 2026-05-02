@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import ReactMarkdown from 'react-markdown'
-import { Sun, Moon, Volume2, Pause, Video as YoutubeIcon, Globe, Newspaper, MapPin, ChevronDown, Calendar, Map, MessageCircle, ExternalLink, Shield } from 'lucide-react'
+import { Sun, Moon, Volume2, Pause, Video as YoutubeIcon, Globe, Newspaper, MapPin, ChevronDown, Calendar, Map, MessageCircle, ExternalLink, Shield, BrainCircuit, Search, Cloud, RotateCcw, Heart } from 'lucide-react'
 const uiTranslations = {
-  English: { appTitle: "Global Election Navigator", appSubtitle: "Your Non-Partisan Electoral Guide", currentLocation: "Current Location", verified: "Verified", preferredLanguage: "Preferred Language", retrieveBtn: "Retrieve Election Data", loadingCoordinates: "Acquiring coordinates...", generatingIntel: "Generating Intelligence...", audioBriefing: "Audio Briefing", electionTimelines: "Election Timelines", saveToCalendar: "Save to Calendar", votingProcedures: "Voting Procedures", helpfulResources: "Helpful Resources", infoSynthesizedFor: "Information synthesized for:", countdownTitle: "Time Until Next Election", days: "Days", hours: "Hours", minutes: "Mins", seconds: "Secs", findPollingStation: "Nearest Polling Station", shareOnWhatsApp: "Share Guide", politicalLandscape: "Political Landscape", currentLeadership: "Current Leadership", keyCandidates: "Key Candidates", awaitingNomination: "Awaiting Nomination" },
+  English: { appTitle: "Global Election Navigator", appSubtitle: "Your Non-Partisan Electoral Guide", currentLocation: "Current Location", verified: "Verified", preferredLanguage: "Preferred Language", retrieveBtn: "Retrieve Election Data", loadingCoordinates: "Acquiring coordinates...", generatingIntel: "Generating Intelligence...", audioBriefing: "Audio Briefing", electionTimelines: "Election Timelines", saveToCalendar: "Save to Calendar", votingProcedures: "Voting Procedures", helpfulResources: "Helpful Resources", infoSynthesizedFor: "Information synthesized for:", countdownTitle: "Time Until Next Election", days: "Days", hours: "Hours", minutes: "Mins", seconds: "Secs", findPollingStation: "Nearest Polling Station", shareOnWhatsApp: "Share Guide", politicalLandscape: "Political Landscape", currentLeadership: "Current Leadership", keyCandidates: "Key Candidates", awaitingNomination: "Awaiting Nomination", generateNewReport: "Generate New Report" },
   Spanish: { appTitle: "Navegador Electoral Global", appSubtitle: "Su Guía Electoral No Partidista", currentLocation: "Ubicación Actual", verified: "Verificado", preferredLanguage: "Idioma Preferido", retrieveBtn: "Recuperar Datos Electorales", loadingCoordinates: "Adquiriendo coordenadas...", generatingIntel: "Generando Inteligencia...", audioBriefing: "Resumen de Audio", electionTimelines: "Cronogramas Electorales", saveToCalendar: "Guardar en Calendario", votingProcedures: "Procedimientos de Votación", helpfulResources: "Recursos Útiles", infoSynthesizedFor: "Información sintetizada para:", countdownTitle: "Tiempo hasta la próxima elección", days: "Días", hours: "Horas", minutes: "Min", seconds: "Seg", findPollingStation: "Centro de votación más cercano", shareOnWhatsApp: "Compartir guía", politicalLandscape: "Panorama Político", currentLeadership: "Liderazgo Actual", keyCandidates: "Candidatos Clave", awaitingNomination: "A la espera de nominación" },
   French: { appTitle: "Navigateur Électoral Mondial", appSubtitle: "Votre Guide Électoral Non Partisan", currentLocation: "Emplacement Actuel", verified: "Vérifié", preferredLanguage: "Langue Préférée", retrieveBtn: "Récupérer les Données Électorales", loadingCoordinates: "Acquisition des coordonnées...", generatingIntel: "Génération de l'intelligence...", audioBriefing: "Résumé Audio", electionTimelines: "Calendriers Électoraux", saveToCalendar: "Enregistrer dans le Calendrier", votingProcedures: "Procédures de Vote", helpfulResources: "Ressources Utiles", infoSynthesizedFor: "Informations synthétisées pour :", countdownTitle: "Temps avant la prochaine élection", days: "Jours", hours: "Heures", minutes: "Min", seconds: "Sec", findPollingStation: "Bureau de vote le plus proche", shareOnWhatsApp: "Partager le guide", politicalLandscape: "Paysage Politique", currentLeadership: "Direction Actuelle", keyCandidates: "Candidats Clés", awaitingNomination: "En attente de nomination" },
   German: { appTitle: "Globaler Wahl-Navigator", appSubtitle: "Ihr Überparteilicher Wahlführer", currentLocation: "Aktueller Standort", verified: "Verifiziert", preferredLanguage: "Bevorzugte Sprache", retrieveBtn: "Wahldaten Abrufen", loadingCoordinates: "Koordinaten erfassen...", generatingIntel: "Informationen werden generiert...", audioBriefing: "Audio-Zusammenfassung", electionTimelines: "Wahltermine", saveToCalendar: "Im Kalender Speichern", votingProcedures: "Wahlverfahren", helpfulResources: "Hilfreiche Ressourcen", infoSynthesizedFor: "Informationen synthetisiert für:", countdownTitle: "Zeit bis zur nächsten Wahl", days: "Tage", hours: "Std.", minutes: "Min.", seconds: "Sek.", findPollingStation: "Nächstgelegenes Wahllokal", shareOnWhatsApp: "Leitfaden teilen", politicalLandscape: "Politische Landschaft", currentLeadership: "Aktuelle Führung", keyCandidates: "Schlüsselkandidaten", awaitingNomination: "Warten auf Nominierung" },
@@ -263,6 +263,7 @@ function App() {
 
   return (
     <div className="min-h-screen w-full bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-300 flex justify-center">
+      <div className="fixed inset-0 z-[-1] bg-gradient-to-br from-blue-500/10 via-transparent to-indigo-600/10 opacity-60 dark:opacity-20 blur-3xl pointer-events-none"></div>
       <div className="w-full flex flex-col">
         {/* Header */}
         <header className={`sticky top-0 z-10 w-full border-b backdrop-blur-md ${theme === 'dark' ? 'bg-slate-900/80 border-slate-800' : 'bg-white/80 border-slate-200'} shadow-sm`}>
@@ -380,6 +381,35 @@ function App() {
               </form>
             </div>
           </div>
+
+          {!result && !isSubmitting && (
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-both" style={{ animationDelay: '300ms' }}>
+              
+              <div className={`flex flex-col items-center text-center p-6 rounded-2xl border backdrop-blur-sm shadow-lg transition-transform duration-500 hover:-translate-y-2 ${theme === 'dark' ? 'bg-slate-800/40 border-slate-700/50' : 'bg-white/60 border-white'}`}>
+                <div className="w-14 h-14 mb-4 rounded-2xl bg-gradient-to-tr from-blue-500 to-indigo-500 flex items-center justify-center text-white shadow-inner">
+                  <BrainCircuit className="w-7 h-7"/>
+                </div>
+                <h3 className={`font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>Vertex AI Gemini</h3>
+                <p className={`text-sm ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>Powered by Gemini 3.1 Pro for agentic reasoning and multilingual synthesis.</p>
+              </div>
+
+              <div className={`flex flex-col items-center text-center p-6 rounded-2xl border backdrop-blur-sm shadow-lg transition-transform duration-500 hover:-translate-y-2 ${theme === 'dark' ? 'bg-slate-800/40 border-slate-700/50' : 'bg-white/60 border-white'}`}>
+                <div className="w-14 h-14 mb-4 rounded-2xl bg-gradient-to-tr from-emerald-400 to-teal-500 flex items-center justify-center text-white shadow-inner">
+                  <Search className="w-7 h-7"/>
+                </div>
+                <h3 className={`font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>Google Search Grounding</h3>
+                <p className={`text-sm ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>Real-time data retrieval ensures up-to-the-minute electoral accuracy.</p>
+              </div>
+
+              <div className={`flex flex-col items-center text-center p-6 rounded-2xl border backdrop-blur-sm shadow-lg transition-transform duration-500 hover:-translate-y-2 ${theme === 'dark' ? 'bg-slate-800/40 border-slate-700/50' : 'bg-white/60 border-white'}`}>
+                <div className="w-14 h-14 mb-4 rounded-2xl bg-gradient-to-tr from-sky-400 to-blue-500 flex items-center justify-center text-white shadow-inner">
+                  <Cloud className="w-7 h-7"/>
+                </div>
+                <h3 className={`font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>Google Cloud</h3>
+                <p className={`text-sm ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>Enterprise-grade secure infrastructure and natively integrated gTTS audio.</p>
+              </div>
+            </div>
+          )}
 
           {/* Error State */}
           {error && isSubmitting === false && location.lat && (
@@ -665,7 +695,8 @@ function App() {
                   </div>
 
                   {/* Civic Actions */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <button onClick={() => setResult(null)} className={`flex items-center justify-center p-4 rounded-xl shadow-md border transition-all duration-200 font-semibold focus:outline-none focus:ring-2 focus:ring-slate-500 ${theme === 'dark' ? 'bg-slate-700/80 border-slate-600 text-slate-100 hover:bg-slate-700' : 'bg-white border-slate-300 text-slate-700 hover:bg-slate-50'}`}><RotateCcw className="w-5 h-5 mr-2 shrink-0" />{t.generateNewReport || "Generate New Report"}</button>
                     <button
                       onClick={() => window.open('https://electoralsearch.eci.gov.in/', '_blank')}
                       className={`flex items-center justify-center p-4 rounded-xl shadow-md border transition-all duration-200 font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500 ${theme === 'dark'
@@ -693,6 +724,18 @@ function App() {
             </div>
           )}
         </main>
+
+        {/* Creator Footer */}
+        <footer className={`w-full py-8 mt-auto border-t backdrop-blur-sm transition-colors duration-300 ${theme === 'dark' ? 'border-slate-800/50 bg-slate-900/20' : 'border-slate-200/50 bg-white/20'}`}>
+          <div className="max-w-4xl mx-auto px-4 flex flex-col items-center justify-center text-center space-y-2">
+            <p className={`text-sm flex items-center justify-center font-medium tracking-wide ${theme === 'dark' ? 'text-slate-300' : 'text-slate-600'}`}>
+              Built with <Heart className="w-4 h-4 mx-1.5 text-red-500 fill-current animate-pulse" /> for democracy
+            </p>
+            <p className={`text-xs ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'}`}>
+              Engineered by Paaras Shemrudkar for the Prompt Wars Hackathon
+            </p>
+          </div>
+        </footer>
       </div>
     </div>
   )
