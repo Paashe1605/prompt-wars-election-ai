@@ -69,7 +69,7 @@ graph TD
 ```
 
 **Infrastructure Highlights:**
-* **Service URL:** [https://election-navigator-526623014042.asia-south1.run.app](https://election-navigator-526623014042.asia-south1.run.app)
+* **Service URL:Cloud Run URL** [https://election-navigator-526623014042.asia-south1.run.app](https://election-navigator-526623014042.asia-south1.run.app)
 * **Container Runtime:** Multi-stage Docker build serving the compiled React frontend statically via the FastAPI backend.
 * **Authentication:** Public endpoint for universal access.
 * **Region:** Asia South 1 (Mumbai) for low-latency delivery in India.
@@ -81,9 +81,9 @@ graph TD
 This application was meticulously architected to exceed the evaluation criteria and the solve the problem to a great extent:
 
 * **1. Accessibility (Our Biggest X-Factor):** We built an inclusive tool featuring **Instant 13-Language i18n** (translating complex AI data instantly into Hindi, Gujarati, Marathi, Tamil, etc.). Furthermore, we built a custom **"Triple-Audio" Engine** using Google TTS, generating native, high-fidelity audio briefings for visually impaired voters.
-* **2. Security (Zero-Trust Architecture):** API keys are strictly hidden within the FastAPI backend environment. The React frontend uses secure, relative API routing (`/api/...`), ensuring Vertex AI keys are never exposed to the client browser. 
+* **2. Security (Zero-Trust Architecture):** API keys are strictly hidden within the FastAPI backend environment. The React frontend uses secure, relative API routing (`/api/...`), ensuring Vertex AI keys are never exposed to the client browser. The FastAPI backend is fortified with strict CORS Middleware handling to prevent unauthorized cross-origin resource sharing.
 * **3. Efficiency (Scalable Cloud Run):** We engineered a multi-stage Docker build. The React frontend is compiled and served statically via the FastAPI backend, allowing the entire full-stack application to run on a single, lightweight, highly efficient Google Cloud Run container.
-* **4. Testing & Reliability:** Implemented robust asynchronous error handling, graceful fallbacks for geolocation denials, and rigorous JSON Schema enforcement to prevent LLM hallucination crashes.
+* **4. Testing & Reliability:** Implemented robust asynchronous error handling, graceful fallbacks for geolocation denials, and rigorous JSON Schema enforcement to prevent LLM hallucination crashes.Integrated Automated CI/CD Pipelines via GitHub Actions and extensive Pytest Unit Testing to ensure zero regressions during deployment.
 * **5. Code Quality:** Decoupled frontend/backend architecture, componentized React structure, and modular Python routing ensures clean, readable, and highly maintainable code.
 
 ## 🌐 Google Tech Stack Deep Dive
@@ -94,7 +94,9 @@ This project is a love letter to the Google Cloud and AI ecosystem, deeply integ
 2. **Google Search Tool (Grounding):** Bypasses traditional LLM training cutoffs. The agent actively searches the web to return up-to-the-minute political leadership, candidate portfolios, and exact election dates.
 3. **Google Text-to-Speech (gTTS):** Natively integrated into the Python backend to generate Base64 audio payloads, bypassing unreliable browser-based speech APIs for uniform, high-fidelity multilingual audio.
 4. **Google Cloud Run:** Deployed in the `asia-south1` (Mumbai) region for ultra-low latency, utilizing Google's enterprise-grade secure infrastructure and IAM policy binding for Service Account authentication.
-5. **Google Antigravity:** Used for development and debugging of the application.
+5. **Google Antigravity:** Utilized exclusively as the primary IDE and agentic orchestration tool for full-stack development and debugging.
+6. **Google Analytics:** Integrated gtag.js for real-time user telemetry and traffic analysis.
+
 
 ## 🧠 Approach, Logic & Assumptions
 
