@@ -289,7 +289,7 @@ function App() {
             <h2 className={`text-4xl md:text-5xl font-extrabold tracking-tight ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">{t.appSubtitle}</span>
             </h2>
-            <p className={`text-lg max-w-2xl mx-auto ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>
+            <p className={`text-lg max-w-2xl mx-auto ${theme === 'dark' ? 'text-slate-300' : 'text-slate-600'}`}>
               Real-time, personalized voting information localized to your region and language.
             </p>
           </div>
@@ -302,7 +302,7 @@ function App() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {/* Location Status */}
                   <div className="space-y-3">
-                    <label className={`block text-sm font-semibold tracking-wide uppercase ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
+                    <label className={`block text-sm font-semibold tracking-wide uppercase ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>
                       {t.currentLocation}
                     </label>
                     <div className={`flex items-center p-4 rounded-xl border ${theme === 'dark' ? 'bg-slate-900/50 border-slate-700 text-slate-300' : 'bg-slate-50 border-slate-200 text-slate-700'}`}>
@@ -325,7 +325,7 @@ function App() {
 
                   {/* Language Selection */}
                   <div className="space-y-3">
-                    <label htmlFor="language" className={`block text-sm font-semibold tracking-wide uppercase ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>
+                    <label htmlFor="language" className={`block text-sm font-semibold tracking-wide uppercase ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>
                       {t.preferredLanguage}
                     </label>
                     <div className="relative">
@@ -358,7 +358,7 @@ function App() {
                         </optgroup>
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4">
-                        <ChevronDown className={`w-5 h-5 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`} />
+                        <ChevronDown className={`w-5 h-5 ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`} />
                       </div>
                     </div>
                   </div>
@@ -368,6 +368,7 @@ function App() {
                   type="submit"
                   disabled={isLoadingLocation || !location.lat || isSubmitting}
                   className="w-full flex justify-center items-center py-4 px-6 border border-transparent rounded-xl shadow-md text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+                  aria-label="Retrieve Election Data based on location"
                 >
                   {isSubmitting ? (
                     <>
@@ -390,7 +391,7 @@ function App() {
                   <BrainCircuit className="w-7 h-7" />
                 </div>
                 <h3 className={`font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>Vertex AI Gemini</h3>
-                <p className={`text-sm ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>Powered by Gemini 3.1 Pro for agentic reasoning and multilingual synthesis.</p>
+                <p className={`text-sm ${theme === 'dark' ? 'text-slate-300' : 'text-slate-600'}`}>Powered by Gemini 3.1 Pro for agentic reasoning and multilingual synthesis.</p>
               </div>
 
               <div className={`flex flex-col items-center text-center p-6 rounded-2xl border backdrop-blur-sm shadow-lg transition-transform duration-500 hover:-translate-y-2 ${theme === 'dark' ? 'bg-slate-800/40 border-slate-700/50' : 'bg-white/60 border-white'}`}>
@@ -398,7 +399,7 @@ function App() {
                   <Search className="w-7 h-7" />
                 </div>
                 <h3 className={`font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>Google Search Grounding</h3>
-                <p className={`text-sm ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>Real-time data retrieval ensures up-to-the-minute electoral accuracy.</p>
+                <p className={`text-sm ${theme === 'dark' ? 'text-slate-300' : 'text-slate-600'}`}>Real-time data retrieval ensures up-to-the-minute electoral accuracy.</p>
               </div>
 
               <div className={`flex flex-col items-center text-center p-6 rounded-2xl border backdrop-blur-sm shadow-lg transition-transform duration-500 hover:-translate-y-2 ${theme === 'dark' ? 'bg-slate-800/40 border-slate-700/50' : 'bg-white/60 border-white'}`}>
@@ -406,7 +407,7 @@ function App() {
                   <Cloud className="w-7 h-7" />
                 </div>
                 <h3 className={`font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>Google Cloud</h3>
-                <p className={`text-sm ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>Enterprise-grade secure infrastructure and natively integrated gTTS audio.</p>
+                <p className={`text-sm ${theme === 'dark' ? 'text-slate-300' : 'text-slate-600'}`}>Enterprise-grade secure infrastructure and natively integrated gTTS audio.</p>
               </div>
             </div>
           )}
@@ -424,7 +425,7 @@ function App() {
 
           {/* Results Area */}
           {result && result.response && !result.response.error && (
-            <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700" aria-live="polite" role="region">
 
               {/* Location Banner */}
               <div className={`px-4 py-3 rounded-lg border flex items-center text-sm font-medium ${theme === 'dark' ? 'bg-indigo-900/30 border-indigo-800 text-indigo-300' : 'bg-indigo-50 border-indigo-200 text-indigo-800'}`}>
@@ -449,7 +450,7 @@ function App() {
                       {isPlaying ? <Pause className="w-8 h-8" /> : <Volume2 className="w-8 h-8 ml-1" />}
                     </button>
                     <div>
-                      <h3 className={`text-sm font-bold uppercase tracking-wider mb-2 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>{t.audioBriefing}</h3>
+                      <h3 className={`text-sm font-bold uppercase tracking-wider mb-2 ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>{t.audioBriefing}</h3>
                       <p className={`text-lg leading-relaxed ${theme === 'dark' ? 'text-slate-200' : 'text-slate-800'}`}>
                         {result.response.audio_summary}
                       </p>
@@ -482,7 +483,7 @@ function App() {
                     <div className={`prose max-w-none flex-grow ${theme === 'dark' ? 'prose-invert prose-p:text-slate-300 prose-li:text-slate-300' : 'prose-slate prose-p:text-slate-600 prose-li:text-slate-600'}`}>
                       {timeLeft && (
                         <div className="mb-6">
-                          <p className={`text-sm font-semibold mb-3 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>{t.countdownTitle}</p>
+                          <p className={`text-sm font-semibold mb-3 ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>{t.countdownTitle}</p>
                           <div className="flex space-x-2 sm:space-x-4">
                             {[
                               { label: t.days, value: timeLeft.days },
@@ -492,7 +493,7 @@ function App() {
                             ].map((item, idx) => (
                               <div key={idx} className={`flex flex-col items-center justify-center p-2 sm:p-3 rounded-lg border w-16 sm:w-20 shadow-inner ${theme === 'dark' ? 'bg-slate-900 border-slate-700' : 'bg-slate-100 border-slate-200'}`}>
                                 <span className={`text-xl sm:text-2xl font-bold font-mono tracking-wider ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`}>{String(item.value).padStart(2, '0')}</span>
-                                <span className={`text-[10px] sm:text-xs uppercase mt-1 ${theme === 'dark' ? 'text-slate-500' : 'text-slate-500'}`}>{item.label}</span>
+                                <span className={`text-[10px] sm:text-xs uppercase mt-1 ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>{item.label}</span>
                               </div>
                             ))}
                           </div>
@@ -514,7 +515,7 @@ function App() {
                             </div>
                           </div>
                         )) : (
-                          <div className={`text-sm ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>Timeline data is unavailable.</div>
+                          <div className={`text-sm ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>Timeline data is unavailable.</div>
                         )}
                       </div>
                     </div>
@@ -538,7 +539,7 @@ function App() {
                             </div>
                             <div>
                               <p className={`font-semibold ${theme === 'dark' ? 'text-slate-200' : 'text-slate-800'}`}>Audio Briefing</p>
-                              <p className={`text-xs ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>AI Synthesized Voice</p>
+                              <p className={`text-xs ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>AI Synthesized Voice</p>
                             </div>
                           </div>
                           <button
@@ -593,7 +594,7 @@ function App() {
                           </div>
                           <div>
                             <p className={`font-semibold ${theme === 'dark' ? 'text-slate-200' : 'text-slate-800'}`}>Audio Briefing</p>
-                            <p className={`text-xs ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>AI Synthesized Voice</p>
+                            <p className={`text-xs ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>AI Synthesized Voice</p>
                           </div>
                         </div>
                         <button
@@ -627,10 +628,10 @@ function App() {
                             </div>
                             <div>
                               <div className="mb-1">
-                                <span className={`text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-medium ${theme === 'dark' ? 'bg-slate-800 text-slate-400' : 'bg-slate-200 text-slate-600'}`}>{party.level}</span>
+                                <span className={`text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-medium ${theme === 'dark' ? 'bg-slate-800 text-slate-300' : 'bg-slate-200 text-slate-600'}`}>{party.level}</span>
                               </div>
                               <p className={`font-bold ${theme === 'dark' ? 'text-slate-200' : 'text-slate-800'}`}>{party.party_name}</p>
-                              <p className={`text-sm ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>{party.leader_name}</p>
+                              <p className={`text-sm ${theme === 'dark' ? 'text-slate-300' : 'text-slate-600'}`}>{party.leader_name}</p>
                             </div>
                           </div>
                         ))}
@@ -646,9 +647,9 @@ function App() {
                               <Shield className="w-6 h-6" style={{ color: candidate.party_color }} />
                             </div>
                             <div>
-                              <p className={`text-xs font-medium mb-1 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-500'}`}>{candidate.party_name}</p>
+                              <p className={`text-xs font-medium mb-1 ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>{candidate.party_name}</p>
                               <p className={`font-bold ${theme === 'dark' ? 'text-slate-200' : 'text-slate-800'}`}>{candidate.candidate_name === 'Awaiting official party nomination' ? t.awaitingNomination : candidate.candidate_name}</p>
-                              <p className={`text-sm mt-2 ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>{candidate.portfolio}</p>
+                              <p className={`text-sm mt-2 ${theme === 'dark' ? 'text-slate-300' : 'text-slate-600'}`}>{candidate.portfolio}</p>
                             </div>
                           </div>
                         ))}
@@ -679,14 +680,14 @@ function App() {
                         <div className="mr-4 flex-shrink-0">
                           {resource.type === 'youtube' && <YoutubeIcon className="w-8 h-8 text-red-500" />}
                           {resource.type === 'official' && <Globe className="w-8 h-8 text-blue-500" />}
-                          {resource.type === 'news' && <Newspaper className="w-8 h-8 text-slate-500 dark:text-slate-400" />}
+                          {resource.type === 'news' && <Newspaper className="w-8 h-8 text-slate-500 dark:text-slate-300" />}
                           {!['youtube', 'official', 'news'].includes(resource.type) && <Globe className="w-8 h-8 text-indigo-500" />}
                         </div>
                         <div className="overflow-hidden">
                           <p className={`font-semibold truncate ${theme === 'dark' ? 'text-slate-200' : 'text-slate-800'}`}>
                             {resource.title}
                           </p>
-                          <p className={`text-xs truncate mt-1 ${theme === 'dark' ? 'text-slate-500' : 'text-slate-500'}`}>
+                          <p className={`text-xs truncate mt-1 ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>
                             {resource.url}
                           </p>
                         </div>
@@ -731,7 +732,7 @@ function App() {
             <p className={`text-sm flex items-center justify-center font-medium tracking-wide ${theme === 'dark' ? 'text-slate-300' : 'text-slate-600'}`}>
               Built with <Heart className="w-4 h-4 mx-1.5 text-red-500 fill-current animate-pulse" /> for democracy
             </p>
-            <p className={`text-xs ${theme === 'dark' ? 'text-slate-500' : 'text-slate-400'}`}>
+            <p className={`text-xs ${theme === 'dark' ? 'text-slate-300' : 'text-slate-600'}`}>
               Engineered by Paaras Shemrudkar for the Prompt Wars Hackathon
             </p>
           </div>

@@ -7,13 +7,13 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 import os
 from election_agent import get_election_info
-
+from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI(title="Election Guide API")
 
 # Enable CORS fully
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],# In production, replace with your Cloud Run URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

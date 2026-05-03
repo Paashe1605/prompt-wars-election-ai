@@ -5,3 +5,5 @@ pydantic
 pytest
 geopy
 gTTS
+pytest
+httpx
