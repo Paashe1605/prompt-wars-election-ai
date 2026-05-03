@@ -65,7 +65,7 @@ graph TD
     Cloud -->|Extracts Summaries| TTS
     TTS -->|Base64 Audio Payloads| Cloud
     Cloud -->|Data + Audio Response| App
-    App -->|Renders Localized Dashboard| User
+    App -->|Renders Localized Dashboard | User
 ```
 
 **Infrastructure Highlights:**
