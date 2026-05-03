@@ -9,7 +9,7 @@ const uiTranslations = {
   German: { appTitle: "Globaler Wahl-Navigator", appSubtitle: "Ihr Überparteilicher Wahlführer", currentLocation: "Aktueller Standort", verified: "Verifiziert", preferredLanguage: "Bevorzugte Sprache", retrieveBtn: "Wahldaten Abrufen", loadingCoordinates: "Koordinaten erfassen...", generatingIntel: "Informationen werden generiert...", audioBriefing: "Audio-Zusammenfassung", electionTimelines: "Wahltermine", saveToCalendar: "Im Kalender Speichern", votingProcedures: "Wahlverfahren", helpfulResources: "Hilfreiche Ressourcen", infoSynthesizedFor: "Informationen synthetisiert für:", countdownTitle: "Zeit bis zur nächsten Wahl", days: "Tage", hours: "Std.", minutes: "Min.", seconds: "Sek.", findPollingStation: "Nächstgelegenes Wahllokal", shareOnWhatsApp: "Leitfaden teilen", politicalLandscape: "Politische Landschaft", currentLeadership: "Aktuelle Führung", keyCandidates: "Schlüsselkandidaten", awaitingNomination: "Warten auf Nominierung" },
   Hindi: { appTitle: "वैश्विक चुनाव नेविगेटर", appSubtitle: "आपका निष्पक्ष चुनावी मार्गदर्शक", currentLocation: "वर्तमान स्थान", verified: "सत्यापित", preferredLanguage: "पसंदीदा भाषा", retrieveBtn: "चुनाव डेटा प्राप्त करें", loadingCoordinates: "निर्देशांक प्राप्त कर रहे हैं...", generatingIntel: "जानकारी उत्पन्न की जा रही है...", audioBriefing: "ऑडियो ब्रीफिंग", electionTimelines: "चुनाव समय-सीमा", saveToCalendar: "कैलेंडर में सहेजें", votingProcedures: "मतदान प्रक्रियाएं", helpfulResources: "उपयोगी संसाधन", infoSynthesizedFor: "के लिए जानकारी संश्लेषित की गई:", countdownTitle: "अगले चुनाव में शेष समय", days: "दिन", hours: "घंटे", minutes: "मिनट", seconds: "सेकंड", findPollingStation: "निकटतम मतदान केंद्र", shareOnWhatsApp: "गाइड साझा करें", politicalLandscape: "राजनीतिक परिदृश्य", currentLeadership: "वर्तमान नेतृत्व", keyCandidates: "प्रमुख उम्मीदवार", awaitingNomination: "नामांकन की प्रतीक्षा" },
   Gujarati: { appTitle: "વૈશ્વિક ચૂંટણી નેવિગેટર", appSubtitle: "તમારો નિષ્પક્ષ ચૂંટણી માર્ગદર્શક", currentLocation: "વર્તમાન સ્થાન", verified: "ચકાસાયેલ", preferredLanguage: "પસંદગીની ભાષા", retrieveBtn: "ચૂંટણી ડેટા મેળવો", loadingCoordinates: "કોઓર્ડિનેટ્સ મેળવી રહ્યા છીએ...", generatingIntel: "માહિતી જનરેટ થઈ રહી છે...", audioBriefing: "ઓડિયો બ્રીફिंग", electionTimelines: "ચૂંટણી સમયરેખા", saveToCalendar: "કેલેન્ડરમાં સાચવો", votingProcedures: "મતદાન પ્રક્રિયાઓ", helpfulResources: "ઉપયોગી સંસાધનો", infoSynthesizedFor: "માટે માહિતી સંશ્લેષિત:", countdownTitle: "આગામી ચૂંટણી સુધીનો સમય", days: "દિવસ", hours: "કલાક", minutes: "મિનિટ", seconds: "સેકન્ડ", findPollingStation: "નજીકનું मतदान કેન્દ્ર", shareOnWhatsApp: "માર્ગદર્શિકા શેર કરો", politicalLandscape: "રાજકીય લેન્ડસ્કેપ", currentLeadership: "વર્તમાન નેતૃત્વ", keyCandidates: "મુખ્ય ઉમેદવારો", awaitingNomination: "નોમિનેશનની રાહ જોવાઈ રહી છે" },
-  Marathi: { appTitle: "जागতিক निवडणूक नेव्हिगेटर", appSubtitle: "तुमचा नि:पक्षपाती निवडणूक मार्गदर्शक", currentLocation: "सध्याचे स्थान", verified: "सत्यापित", preferredLanguage: "पसंतीची भाषा", retrieveBtn: "निवडणूक डेटा मिळवा", loadingCoordinates: "કોઓર્ડિનેટ્સ मिळवत आहे...", generatingIntel: "માહિત વ્યુત્પન્ન करत आहे...", audioBriefing: "ऑडिओ ब्रीफिंग", electionTimelines: "निवडणूक वेळापत्रक", saveToCalendar: "कॅलेंडरमध्ये जतन करा", votingProcedures: "મતદાન પ્રક્રિયા", helpfulResources: "ઉપयुક્ત संसाधने", infoSynthesizedFor: "यासाठी માહિતી संश्लेષિત केली:", countdownTitle: "पुढील निवडणुकीपर्यंतची वेळ", days: "દિવસ", hours: "तास", minutes: "मિનિટે", seconds: "सेकंड", findPollingStation: "जवळचे मतदान કેન્દ્ર", shareOnWhatsApp: "માર્ગદર્શક સામાયિક કરા", politicalLandscape: "રાજકીય પરિદૃશ્ય", currentLeadership: "સધ્યાચે નેતૃત્વ", keyCandidates: "પ્રમુખ ઉમેદવાર", awaitingNomination: "નામાંકનાચી પ્રતીક્ષા" },
+  Marathi: { appTitle: "जागतिक निवडणूक मार्गदर्शक", appSubtitle: "तुमचा नि:पक्षपाती निवडणूक मार्गदर्शक", currentLocation: "सध्याचे स्थान", verified: "सत्यापित", preferredLanguage: "पसंतीची भाषा", retrieveBtn: "निवडणूक डेटा मिळवा", loadingCoordinates: "કોઓર્ડિનેટ્સ मिळवत आहे...", generatingIntel: "માહિત વ્યુત્પન્ન करत आहे...", audioBriefing: "ऑडिओ ब्रीफिंग", electionTimelines: "निवडणूक वेळापत्रक", saveToCalendar: "कॅलेंडरमध्ये जतन करा", votingProcedures: "મતદાન પ્રક્રિયા", helpfulResources: "ઉપयुક્ત संसाधने", infoSynthesizedFor: "यासाठी માહિતી संश्लेષિત केली:", countdownTitle: "पुढील निवडणुकीपर्यंतची वेळ", days: "દિવસ", hours: "तास", minutes: "मિનિટે", seconds: "सेकंड", findPollingStation: "जवळचे मतदान કેન્દ્ર", shareOnWhatsApp: "માર્ગદર્શક સામાયિક કરા", politicalLandscape: "રાજકીય પરિદૃશ્ય", currentLeadership: "સધ્યાચે નેતૃત્વ", keyCandidates: "પ્રમુખ ઉમેદવાર", awaitingNomination: "નામાંકનાચી પ્રતીક્ષા" },
   Tamil: { appTitle: "உலகளாவிய தேர்தல் வழிகாட்டி", appSubtitle: "உங்கள் நடுநிலையான தேர்தல் வழிகாட்டி", currentLocation: "தற்போதைய இடம்", verified: "சரிபார்க்கப்பட்டது", preferredLanguage: "விருப்பமான மொழி", retrieveBtn: "தேர்தல் தரவைப் பெறுக", loadingCoordinates: "ஆயத்தொலைவுகளைப் பெறுகிறது...", generatingIntel: "தகவலை உருவாக்குகிறது...", audioBriefing: "ஆடியோ சுருக்கம்", electionTimelines: "தேர்தல் காலக்கோடு", saveToCalendar: "நாள்காட்டியில் சேமி", votingProcedures: "வாக்களிப்பு நடைமுறைகள்", helpfulResources: "பயனுள்ள வளங்கள்", infoSynthesizedFor: "தகவல் தொகுக்கப்பட்ட இடம்:", countdownTitle: "அடுத்த தேர்தல் வரை உள்ள நேரம்", days: "நாட்கள்", hours: "மணிநேரம்", minutes: "நிமிடம்", seconds: "வினாடி", findPollingStation: "அருகிலுள்ள வாக்குச்சாவடி", shareOnWhatsApp: "வழிகாட்டியைப் பகிரவும்", politicalLandscape: "அரசியல் நிலவரம்", currentLeadership: "தற்போதைய தலைமை", keyCandidates: "முக்கிய வேட்பாளர்கள்", awaitingNomination: "பரிந்துரைக்காக காத்திருக்கிறது" },
   Telugu: { appTitle: "గ్లోబల్ ఎలక్షన్ నావిగేటర్", appSubtitle: "మీ నిష్పాక్షిక ఎన్నికల మార్గదర్శి", currentLocation: "ప్రస్తుత స్థానం", verified: "ధృవీకరించబడింది", preferredLanguage: "ఇష్టపడే భాష", retrieveBtn: "ఎన్నికల డేటాను పొందండి", loadingCoordinates: "కోఆర్డినేట్లను పొందుతోంది...", generatingIntel: "సమాచారాన్ని ఉత్పత్తి చేస్తోంది...", audioBriefing: "ఆడియో బ్రీఫింగ్", electionTimelines: "ఎన్నికల కాలక్రమం", saveToCalendar: "క్యాలెండర్లో సేవ్ చేయండి", votingProcedures: "ఓటింగ్ విధానాలు", helpfulResources: "ఉపయోగకరమైన వనరులు", infoSynthesizedFor: "సమాచారం సంశ్లేషణ చేయబడింది:", countdownTitle: "తదుపరి ఎన్నికల వరకు సమయం", days: "రోజులు", hours: "గంటలు", minutes: "నిమిషాలు", seconds: "సెకన్లు", findPollingStation: "సమీప పోలింగ్ స్టేషన్", shareOnWhatsApp: "గైడ్ను భాగస్వామ్యం చేయండి", politicalLandscape: "రాజకీయ ముఖచిత్రం", currentLeadership: "ప్రస్తుత నాయకత్వం", keyCandidates: "ముఖ్య అభ్యర్థులు", awaitingNomination: "నామినేషన్ కోసం వేచి ఉంది" },
   Bengali: { appTitle: "গ্লোবাল ইলেকশন নেভিগেটর", appSubtitle: "আপনার নিরপেক্ষ নির্বাচনী গাইড", currentLocation: "বর্তমান অবস্থান", verified: "যাচাইকৃত", preferredLanguage: "পছন্দের ভাষা", retrieveBtn: "নির্বাচনী ডেটা পান", loadingCoordinates: "স্থানাঙ্ক সংগ্রহ করা হচ্ছে...", generatingIntel: "তথ্য তৈরি করা হচ্ছে...", audioBriefing: "অডিও ব্রিফিং", electionTimelines: "নির্বাচনের সময়রেখা", saveToCalendar: "ক্যালেন্ডারে সংরক্ষণ করুন", votingProcedures: "ভোটদানের পদ্ধতি", helpfulResources: "প্রয়োজনীয় সম্পদ", infoSynthesizedFor: "তথ্য সংশ্লেষিত হয়েছে:", countdownTitle: "পরবর্তী নির্বাচন পর্যন্ত সময়", days: "দিন", hours: "ঘন্টা", minutes: "মিনিট", seconds: "সেকেন্ড", findPollingStation: "নিকটস্থ ভোটকেন্দ্র", shareOnWhatsApp: "গাইড শেয়ার করুন", politicalLandscape: "রাজনৈতিক প্রেক্ষাপট", currentLeadership: "বর্তমান নেতৃত্ব", keyCandidates: "মূল প্রার্থী", awaitingNomination: "মনোনয়নের অপেক্ষায়" },
@@ -335,8 +335,8 @@ function App() {
                         value={language}
                         onChange={(e) => setLanguage(e.target.value)}
                         className={`block w-full rounded-xl border appearance-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 p-4 pr-10 transition-colors ${theme === 'dark'
-                            ? 'bg-slate-900/50 border-slate-700 text-white'
-                            : 'bg-slate-50 border-slate-200 text-slate-900'
+                          ? 'bg-slate-900/50 border-slate-700 text-white'
+                          : 'bg-slate-50 border-slate-200 text-slate-900'
                           }`}
                       >
                         <optgroup label="International Languages">
@@ -384,10 +384,10 @@ function App() {
 
           {!result && !isSubmitting && (
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-both" style={{ animationDelay: '300ms' }}>
-              
+
               <div className={`flex flex-col items-center text-center p-6 rounded-2xl border backdrop-blur-sm shadow-lg transition-transform duration-500 hover:-translate-y-2 ${theme === 'dark' ? 'bg-slate-800/40 border-slate-700/50' : 'bg-white/60 border-white'}`}>
                 <div className="w-14 h-14 mb-4 rounded-2xl bg-gradient-to-tr from-blue-500 to-indigo-500 flex items-center justify-center text-white shadow-inner">
-                  <BrainCircuit className="w-7 h-7"/>
+                  <BrainCircuit className="w-7 h-7" />
                 </div>
                 <h3 className={`font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>Vertex AI Gemini</h3>
                 <p className={`text-sm ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>Powered by Gemini 3.1 Pro for agentic reasoning and multilingual synthesis.</p>
@@ -395,7 +395,7 @@ function App() {
 
               <div className={`flex flex-col items-center text-center p-6 rounded-2xl border backdrop-blur-sm shadow-lg transition-transform duration-500 hover:-translate-y-2 ${theme === 'dark' ? 'bg-slate-800/40 border-slate-700/50' : 'bg-white/60 border-white'}`}>
                 <div className="w-14 h-14 mb-4 rounded-2xl bg-gradient-to-tr from-emerald-400 to-teal-500 flex items-center justify-center text-white shadow-inner">
-                  <Search className="w-7 h-7"/>
+                  <Search className="w-7 h-7" />
                 </div>
                 <h3 className={`font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>Google Search Grounding</h3>
                 <p className={`text-sm ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>Real-time data retrieval ensures up-to-the-minute electoral accuracy.</p>
@@ -403,7 +403,7 @@ function App() {
 
               <div className={`flex flex-col items-center text-center p-6 rounded-2xl border backdrop-blur-sm shadow-lg transition-transform duration-500 hover:-translate-y-2 ${theme === 'dark' ? 'bg-slate-800/40 border-slate-700/50' : 'bg-white/60 border-white'}`}>
                 <div className="w-14 h-14 mb-4 rounded-2xl bg-gradient-to-tr from-sky-400 to-blue-500 flex items-center justify-center text-white shadow-inner">
-                  <Cloud className="w-7 h-7"/>
+                  <Cloud className="w-7 h-7" />
                 </div>
                 <h3 className={`font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>Google Cloud</h3>
                 <p className={`text-sm ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}>Enterprise-grade secure infrastructure and natively integrated gTTS audio.</p>
@@ -441,8 +441,8 @@ function App() {
                       onClick={toggleAudio}
                       disabled={!audioData}
                       className={`flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center transition-all shadow-md focus:outline-none focus:ring-4 focus:ring-blue-500/50 ${isPlaying
-                          ? 'bg-blue-600 text-white hover:bg-blue-700 hover:scale-105'
-                          : theme === 'dark' ? 'bg-slate-700 text-blue-400 hover:bg-slate-600' : 'bg-blue-50 text-blue-600 hover:bg-blue-100'
+                        ? 'bg-blue-600 text-white hover:bg-blue-700 hover:scale-105'
+                        : theme === 'dark' ? 'bg-slate-700 text-blue-400 hover:bg-slate-600' : 'bg-blue-50 text-blue-600 hover:bg-blue-100'
                         }`}
                       aria-label={isPlaying ? 'Pause audio briefing' : 'Play audio briefing'}
                     >
@@ -470,8 +470,8 @@ function App() {
                         <button
                           onClick={() => handleSaveToCalendar(result.response.next_election_date)}
                           className={`flex items-center text-sm px-3 py-1.5 rounded-lg border font-medium transition-colors ${theme === 'dark'
-                              ? 'border-slate-600 bg-slate-700/50 hover:bg-slate-700 text-slate-200'
-                              : 'border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-700'
+                            ? 'border-slate-600 bg-slate-700/50 hover:bg-slate-700 text-slate-200'
+                            : 'border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-700'
                             }`}
                         >
                           <Calendar className="w-4 h-4 mr-2" />
@@ -527,7 +527,7 @@ function App() {
                     <h3 className={`text-xl font-bold mb-6 flex items-center border-b pb-4 ${theme === 'dark' ? 'text-white border-slate-700' : 'text-slate-900 border-slate-100'}`}>
                       {t.votingProcedures}
                     </h3>
-                    
+
                     {/* Voting Audio Player */}
                     {audioDataVoting && (
                       <div className={`mb-6 border-b pb-6 ${theme === 'dark' ? 'border-slate-700' : 'border-slate-200'}`}>
@@ -672,8 +672,8 @@ function App() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`flex items-center p-4 rounded-xl border transition-all duration-200 hover:-translate-y-1 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${theme === 'dark'
-                            ? 'bg-slate-900/50 border-slate-700 hover:border-slate-500 hover:bg-slate-700/50'
-                            : 'bg-slate-50 border-slate-200 hover:border-blue-300 hover:bg-blue-50'
+                          ? 'bg-slate-900/50 border-slate-700 hover:border-slate-500 hover:bg-slate-700/50'
+                          : 'bg-slate-50 border-slate-200 hover:border-blue-300 hover:bg-blue-50'
                           }`}
                       >
                         <div className="mr-4 flex-shrink-0">
@@ -700,8 +700,8 @@ function App() {
                     <button
                       onClick={() => window.open('https://electoralsearch.eci.gov.in/', '_blank')}
                       className={`flex items-center justify-center p-4 rounded-xl shadow-md border transition-all duration-200 font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500 ${theme === 'dark'
-                          ? 'bg-blue-600/20 border-blue-500/30 text-blue-300 hover:bg-blue-600/30'
-                          : 'bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100'
+                        ? 'bg-blue-600/20 border-blue-500/30 text-blue-300 hover:bg-blue-600/30'
+                        : 'bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100'
                         }`}
                     >
                       <ExternalLink className="w-5 h-5 mr-2 shrink-0" />
@@ -710,8 +710,8 @@ function App() {
                     <button
                       onClick={() => window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(`*${t.appTitle}* - ${result.location_identified}\n\n*${t.electionTimelines}:* ${result.response.next_election_date}\n\n*${t.audioBriefing}:*\n${result.response.audio_summary}\n\n📍 Generate your own report at: https://election-navigator-526623014042.asia-south1.run.app`)}`, '_blank')}
                       className={`flex items-center justify-center p-4 rounded-xl shadow-md border transition-all duration-200 font-semibold focus:outline-none focus:ring-2 focus:ring-emerald-500 ${theme === 'dark'
-                          ? 'bg-emerald-600/20 border-emerald-500/30 text-emerald-300 hover:bg-emerald-600/30'
-                          : 'bg-emerald-50 border-emerald-200 text-emerald-700 hover:bg-emerald-100'
+                        ? 'bg-emerald-600/20 border-emerald-500/30 text-emerald-300 hover:bg-emerald-600/30'
+                        : 'bg-emerald-50 border-emerald-200 text-emerald-700 hover:bg-emerald-100'
                         }`}
                     >
                       <MessageCircle className="w-5 h-5 mr-2 shrink-0" />
