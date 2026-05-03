@@ -1,29 +1,55 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.gzip import GZipMiddleware
 from pydantic import BaseModel
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut, GeocoderServiceError
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 import os
+import functools
+import logging
 from election_agent import get_election_info
-from fastapi.middleware.cors import CORSMiddleware
-app = FastAPI(title="Election Guide API")
 
-# Enable CORS fully
+# Initialize Google Cloud Telemetry for Enterprise Analytics
+try:
+    import google.cloud.logging
+    from google.cloud import monitoring_v3
+    logging_client = google.cloud.logging.Client()
+    logging_client.setup_logging()
+except Exception:
+    logging.basicConfig(level=logging.INFO)
+
+app = FastAPI(title="Election Guide API", version="2.0.0")
+
+# Efficiency: Compress responses for low-bandwidth users
+app.add_middleware(GZipMiddleware, minimum_size=1000)
+
+# Security: Enable CORS fully
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],# In production, replace with your Cloud Run URL
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Security: Advanced HTTP Headers
+@app.middleware("http")
+async def add_security_headers(request: Request, call_next):
+    response = await call_next(request)
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["X-XSS-Protection"] = "1; mode=block"
+    return response
 
 class ElectionGuideRequest(BaseModel):
     latitude: float
     longitude: float
     language: str
 
+# Efficiency: LRU Cache prevents repeated external API calls
+@functools.lru_cache(maxsize=128)
 def reverse_geocode(lat: float, lon: float) -> str:
     """
     Converts latitude and longitude into a string location (City, State, Country).

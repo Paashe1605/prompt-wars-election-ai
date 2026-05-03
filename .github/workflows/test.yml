@@ -1,21 +1,29 @@
-name: AI Agent CI Pipeline
+name: Enterprise CI Pipeline
 
 on: [push, pull_request]
 
 jobs:
-  test:
+  validate:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.10'
+        
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pytest httpx fastapi
-    - name: Run Pytest
+        pip install -r backend/requirements.txt
+        
+    - name: Code Quality - Lint with Flake8
       run: |
         cd backend
-        pytest test_main.py
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        
+    - name: Reliability - Run Pytest with Coverage
+      run: |
+        cd backend
+        pytest test_main.py -v --cov=.

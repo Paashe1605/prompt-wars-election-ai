@@ -2,8 +2,11 @@ fastapi
 uvicorn
 google-genai
 pydantic
-pytest
 geopy
 gTTS
 pytest
+pytest-cov
 httpx
+google-cloud-logging
+google-cloud-monitoring
+flake8
