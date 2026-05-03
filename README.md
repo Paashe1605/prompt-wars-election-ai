@@ -2,7 +2,7 @@
   <img src="https://www.gstatic.com/images/branding/product/2x/google_cloud_64dp.png" alt="Google Cloud Logo" width="80" height="80">
   <h1>Global Election Navigator 🌍</h1>
   <p><b>Your Non-Partisan, AI-Powered Electoral Guide</b></p>
-  <p><i>Engineered for the Prompt Wars Hackathon by Hack2Skill</i></p>
+  <p><i>Engineered for the Prompt Wars Hackathon by Hack2Skill using Google Antigravity</i></p>
   <br>
   <p><b>Lead AI Architect & Orchestrator:</b> Paaras Shemrudkar</p>
 </div>
@@ -76,9 +76,9 @@ graph TD
 
 ---
 
-## 🏆 Hack2Skill Evaluation Alignment (The X-Factors)
+## 🏆 Evaluation Alignment: The X-Factors:-
 
-This application was meticulously architected to exceed the Hack2Skill evaluation criteria:
+This application was meticulously architected to exceed the evaluation criteria and the solve the problem to a great extent:
 
 * **1. Accessibility (Our Biggest X-Factor):** We built an inclusive tool featuring **Instant 13-Language i18n** (translating complex AI data instantly into Hindi, Gujarati, Marathi, Tamil, etc.). Furthermore, we built a custom **"Triple-Audio" Engine** using Google TTS, generating native, high-fidelity audio briefings for visually impaired voters.
 * **2. Security (Zero-Trust Architecture):** API keys are strictly hidden within the FastAPI backend environment. The React frontend uses secure, relative API routing (`/api/...`), ensuring Vertex AI keys are never exposed to the client browser. 
@@ -94,6 +94,7 @@ This project is a love letter to the Google Cloud and AI ecosystem, deeply integ
 2. **Google Search Tool (Grounding):** Bypasses traditional LLM training cutoffs. The agent actively searches the web to return up-to-the-minute political leadership, candidate portfolios, and exact election dates.
 3. **Google Text-to-Speech (gTTS):** Natively integrated into the Python backend to generate Base64 audio payloads, bypassing unreliable browser-based speech APIs for uniform, high-fidelity multilingual audio.
 4. **Google Cloud Run:** Deployed in the `asia-south1` (Mumbai) region for ultra-low latency, utilizing Google's enterprise-grade secure infrastructure and IAM policy binding for Service Account authentication.
+5. **Google Antigravity:** Used for development and debugging of the application.
 
 ## 🧠 Approach, Logic & Assumptions
 
