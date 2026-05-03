@@ -98,7 +98,7 @@ function App() {
             lat: position.coords.latitude,
             lon: position.coords.longitude,
           })
-          axios.get(`http://localhost:8000/api/location?lat=${position.coords.latitude}&lon=${position.coords.longitude}`)
+          axios.get(`/api/location?lat=${position.coords.latitude}&lon=${position.coords.longitude}`)
             .then(res => setHumanLocation(res.data.location))
             .catch(console.error)
           setIsLoadingLocation(false)
@@ -148,7 +148,7 @@ function App() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/api/election-guide', {
+      const response = await axios.post('/api/election-guide', {
         latitude: location.lat,
         longitude: location.lon,
         language: language
@@ -708,7 +708,7 @@ function App() {
                       {t.findPollingStation}
                     </button>
                     <button
-                      onClick={() => window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(`*${t.appTitle}* - ${result.location_identified}\n\n*${t.electionTimelines}:* ${result.response.next_election_date}\n\n*${t.audioBriefing}:*\n${result.response.audio_summary}\n\n📍 Generate your own report at: [INSERT_LIVE_URL_HERE]`)}`, '_blank')}
+                      onClick={() => window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(`*${t.appTitle}* - ${result.location_identified}\n\n*${t.electionTimelines}:* ${result.response.next_election_date}\n\n*${t.audioBriefing}:*\n${result.response.audio_summary}\n\n📍 Generate your own report at: https://election-navigator-526623014042.asia-south1.run.app`)}`, '_blank')}
                       className={`flex items-center justify-center p-4 rounded-xl shadow-md border transition-all duration-200 font-semibold focus:outline-none focus:ring-2 focus:ring-emerald-500 ${theme === 'dark'
                           ? 'bg-emerald-600/20 border-emerald-500/30 text-emerald-300 hover:bg-emerald-600/30'
                           : 'bg-emerald-50 border-emerald-200 text-emerald-700 hover:bg-emerald-100'
